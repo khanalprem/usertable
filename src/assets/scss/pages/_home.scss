@@ -24,7 +24,7 @@
     padding: 8rem 0;
   }
 }
-%section-shape{
+%shape{
   &::before{
     content: '';
     width: 100%;
@@ -32,10 +32,11 @@
     top: 0;
     left: 0;
     position: absolute;
-    // background-image: url(asset-path('pages/curve.png'));
-
+    background-image: url('../../images/curve.png');
   }
+  
 }
+
 //extend class for section
 .common-section {
   display: grid;
@@ -88,6 +89,49 @@
   }
   @include breakpoint-up("lg-tab") {
     align-items: center;
+  }
+}
+.title{
+  h5{
+    position: relative;
+    margin-bottom: 10px;
+  
+  }
+  
+  &-content{
+    max-width: 768px;
+    &_max{
+      margin:auto;
+    }
+  }
+}
+.hero{
+  // @include background-gradient(var(--clr-primary-light), var(--clr-secondary), 'vertical');
+  background: linear-gradient(160deg, lighten($primary, 30%) 19%, lighten($primary, 10%) 70%);
+  height:calc(100vh - 50px);
+  position: relative;
+  &::before{
+    content: '';
+    width: 100%;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    background-image: url('../../images/curve.png');
+    bottom:0;
+    transform: rotate(180deg);
+  }
+  &-content{
+    max-width: 960px;
+    margin:auto;
+  }
+}
+.about{
+  @extend %section-padding;
+  
+  position: relative;
+  &-content{
+    max-width: 960px;
+    margin:auto;
   }
 }
 
@@ -688,7 +732,6 @@
 .careTeam {
   background-color: var(--clr-cream-light);
   position: relative;
-  @extend %section-shape;
   padding:8rem 0 5rem;
   @include breakpoint-up('lg-tab'){
     padding:10rem 0 8rem;
@@ -767,7 +810,6 @@
 .explore-accordion{
   background-color: var(--clr-cream-light);
   position: relative;
-  @extend %section-shape;
   @extend  %section-padding;
 }
 .accordion{

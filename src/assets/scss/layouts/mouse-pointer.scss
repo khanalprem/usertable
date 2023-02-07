@@ -1,0 +1,11 @@
+.mouse-pointer {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  &_sm{
+      width: 30px;
+      height: 30px;
+  }
+}

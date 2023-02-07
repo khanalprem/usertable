@@ -10,30 +10,23 @@
   &-primary {
     color: var(--clr-white);
     border-radius: 100px;
-    filter: saturate(1);
     transition: all 300ms ease-out;
-    background-color: var(--clr-blue);
+    background-color: var(--clr-primary);
     &:focus,
     &:hover {
-      background: linear-gradient(
-        89.77deg,
-        #9bcfc8 0.15%,
-        #abc1dd 49.98%,
-        #d8bdd7 99.8%
-      );
-      transform: scale(0.97);
-      filter: saturate(2);
+      background-color: var(--clr-primary-light);
     }
+  }
+  &-secondary{
+    border:1px solid var(--clr-white);
+    border-radius: 100px;
   }
   &-sm {
     padding: 0.7rem 1rem;
     border-radius: 1.25rem;
     font-size: var(--fs-sm);
   }
-  &-blue {
-    background-color: var(--clr-blue);
-    color: var(--clr-white);
-  }
+  
   &-white {
     background-color: var(--clr-white);
     &:hover{
@@ -43,7 +36,7 @@
   &-link{
     text-decoration: underline;
     padding:0;
-    font-family: var(--ff-medium);
+    font-weight: 500;
     &:hover{
       color:var(--clr-blue-600)
     }

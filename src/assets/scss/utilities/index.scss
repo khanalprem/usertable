@@ -1,5 +1,9 @@
 //Utility classes
 
+body{
+  position: relative;
+}
+
 .is-flex {
   @include flexbox();
 }
@@ -137,11 +141,11 @@
 .clr-blue {
   color: var(--clr-blue);
 }
-.clr-blue_bg {
-  background-color: var(--clr-blue);
+.clr-primary {
+  color: var(--clr-primary);
 }
-.clr-blue-light_bg {
-  background-color: var(--clr-blue-light);
+.clr-secondary {
+  color: var(--clr-secondary);
 }
 .clr-green {
   color: var(--clr-green);
