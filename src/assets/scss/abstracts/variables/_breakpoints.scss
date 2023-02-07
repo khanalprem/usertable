@@ -1,0 +1,53 @@
+// Breakpoints
+$breakpoints: (
+  "sm-phone": 320px,
+  "mmd-phone": 375px,
+  "md-phone": 480px,
+  "xl-phone": 576px,
+  "md-tab": 768px,
+  "lg-tab": 991px,
+  "xl-tab": 1024px,
+  "sm-desktop": 1200px,
+  "md-desktop": 1280px,
+  "xl-desktop": 1366px,
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints,$size)) {
+    @content;
+  }
+}
+
+
+@mixin for-wide-aspect-ratio {
+  @media (min-aspect-ratio: 4/3) {
+    @content;
+  }
+}
+
+@mixin for-tall-aspect-ratio {
+  @media (max-aspect-ratio: 3/4) {
+    @content;
+  }
+}
+
+// calling method
+// @include breakpoint-up('sm-phone') {
+//     color: blue;
+//   }
+
+// calling method
+// @include breakpoint-down('sm-phone') {
+//     color: blue;
+//   }
+
+// calling method
+// @include breakpoint-up('sm-phone') {
+//     color: blue;
+//   }

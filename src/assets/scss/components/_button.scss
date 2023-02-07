@@ -1,0 +1,55 @@
+.btn {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  display: inline-flex;
+  @include transition(background-color .4s ease-in-out);
+  &-primary {
+    color: var(--clr-white);
+    border-radius: 100px;
+    filter: saturate(1);
+    transition: all 300ms ease-out;
+    background-color: var(--clr-blue);
+    &:focus,
+    &:hover {
+      background: linear-gradient(
+        89.77deg,
+        #9bcfc8 0.15%,
+        #abc1dd 49.98%,
+        #d8bdd7 99.8%
+      );
+      transform: scale(0.97);
+      filter: saturate(2);
+    }
+  }
+  &-sm {
+    padding: 0.7rem 1rem;
+    border-radius: 1.25rem;
+    font-size: var(--fs-sm);
+  }
+  &-blue {
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+  }
+  &-white {
+    background-color: var(--clr-white);
+    &:hover{
+      background-color: var(--clr-blue-light);
+    }
+  }
+  &-link{
+    text-decoration: underline;
+    padding:0;
+    font-family: var(--ff-medium);
+    &:hover{
+      color:var(--clr-blue-600)
+    }
+  }
+  &:disabled,
+  &-disabled {
+    cursor: not-allowed;
+  }
+}

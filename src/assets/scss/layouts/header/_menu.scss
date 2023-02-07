@@ -1,0 +1,173 @@
+nav{
+    position: relative;
+    ul{
+        column-gap: 2rem;
+        
+        li{
+            a{
+                transition: color .5s;
+                display: block;
+                @include breakpoint-up("lg-tab"){
+                    padding:1.5rem 0;
+                  }
+               
+            }
+            .megaMenu{
+                position: absolute;
+                left:0;
+                right:0;
+                top:130%;
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s ease-in-out,opacity .3s ease-in-out;
+                height: 0;
+                &-wrap{
+                  padding:3.5rem;
+                  background-color: var(--clr-white);
+                  display: flex;
+                  flex-flow:column wrap;
+                  max-width: 1290px;
+                  width: 100%;
+                  margin:0 auto;
+                  @include breakpoint-down('md-tab'){
+                    .grid-item{
+                      margin-bottom: 1.5rem;
+                    }
+                  }
+                  
+                  @include breakpoint-up('md-tab'){
+                    flex-flow:row nowrap;
+                    .grid-item{
+                      &:first-child,&:last-child{
+                        flex:0 0 22%;
+                        max-width: 22%;
+                        width: 100%;
+                      }
+                      &:nth-child(2){
+                        flex:0 0 50%;
+                        max-width: 50%;
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
+                li{
+                  a{
+                    padding:.5rem 0;
+                    @include transition(all .5s ease-in-out);
+                    &::after{
+                      display: none
+                    }
+                    &:hover{
+                      text-decoration: underline;
+                    }
+                  }
+                }
+                &-videos{
+                    --minWidth:120px;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fill, minmax(var(--minWidth), 1fr));
+                  column-gap: 2rem;
+                  @include breakpoint-up('xl-tab'){
+                    max-width: 500px;
+                    --minWidth:140px;
+                  }
+                  
+                  li{
+                    margin-top:1rem;
+                  }
+                }
+                
+              
+              }
+            &.is-active{
+                a{
+                    // background-color: var(--clr-primary-500);
+                    // color:var(--clr-white-900);
+                }
+                
+            }
+            &:hover{
+                .megaMenu{
+                  visibility: visible;
+                  opacity: 1;
+                  height: 100%;
+                  top:100%;
+                }
+              }
+        }
+    }
+}
+
+.site-header{
+  &_mobile{
+    nav{
+      position: absolute;
+      top:100%;
+      left:0;
+      right: auto;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--clr-white);
+      @include transition(all .5s ease-in-out);
+      @include transform(translateX(-100%));
+      height: calc(100vh - 185px);
+      li{
+        border-bottom: 1px solid rgba($black-700,0.1);
+        a{
+          padding:.6rem 1.25rem;
+        }
+      }
+      .social-icons{
+        padding:1rem 1.25rem;
+      }
+    }
+    .nav-button{
+      width: 1.5rem;
+      height: 1.25rem;
+      position: relative;
+      span{
+        content:'';
+        width: 100%;
+        height: 2px;
+        background-color: var(--clr-body);
+        position: absolute;
+        top:20%;
+        display: block;
+        @include transition(all .5s ease-in-out);
+        &:last-child{
+          top:70%
+        }
+      }
+      &_active{
+        span{
+          &:first-child{
+            transform: rotate(45deg);
+            top:50%
+          }
+          &:last-child{
+            transform: rotate(-45deg);
+            top:50%
+          }
+        }
+      }
+    }
+
+    &.nav-active{
+      nav{
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1111;
+        @include transform(translateX(0));
+        
+      }
+    }
+  }
+}
+
+
+

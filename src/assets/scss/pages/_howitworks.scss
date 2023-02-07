@@ -1,0 +1,200 @@
+//howitworks banner
+.howitworks-banner{
+  padding-bottom: 5rem;
+  @include breakpoint-up('lg-tab'){
+    padding-bottom: 8vw;
+  }
+  &_content{
+    @include breakpoint-down('md-tab'){
+      margin-top:1.5rem;
+      text-align: center;
+    }
+  }
+  &_shape{
+    position: absolute;
+    stroke: var(--clr-white);
+    &.pich{
+      top: 30%;
+      left:-20px;
+      @include transform(rotate(145deg));
+      @include animationKey('rotateHalf 10s infinite linear');
+      path{
+        fill:var(--clr-pich);
+      }
+      
+    }
+    &.green{
+      top: 30%;
+      right:8%;
+      @include transform(rotate(-60deg));
+      @include animationKey('rotated 15s infinite linear');
+      path{
+        fill:var(--clr-green);
+      }
+    }
+    &.pink{
+      top: 12%;
+      right:20%;
+      @include animationKey('scaleUp 12s infinite linear');
+      path{
+        fill:var(--clr-pink);
+      }
+    }
+  }
+}
+.howitworks-banner_wrap{
+  --minWidth:300px;
+  display: grid;
+  place-items: center;
+  column-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minWidth), 1fr));
+ figure{
+   @include breakpoint-down('md-tab'){
+     margin:auto;
+   }
+ }
+}
+
+//howitworks steps
+.howitworks-steps{
+  background-color: var(--clr-cream-light);
+  position: relative;
+  @extend %section-shape;
+}
+
+//toothpillow app
+.toothpillow-app{
+  @extend  %section-padding;
+  .title{
+    max-width: 450px;
+    margin:0 auto;
+    .btn{
+      border:1.5px solid var(--clr-white);
+      background-color: transparent;
+      color:var(--clr-white);
+      border-radius: 1.75rem;
+  &:hover{
+    color:var(--clr-blue-dark);
+    background-color: var(--clr-white);
+  }
+    }
+  }
+}
+.appSlider{
+  .swiper-slide{
+    transform: scale(0.94);
+    @include  transition(all 200ms linear);
+    opacity: .7;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &-active{
+      transform: scale(1);
+      opacity: 1;
+      img.app-icon{
+        @include animationKey('scale-up 15s infinite linear');
+      }
+    }
+  }
+  .app-feature{
+    figure{
+      --radius:1.25rem;
+      border-radius: var(--radius);
+      position: relative;
+      img{
+        border-radius: var(--radius);
+        &.app-icon{
+          max-width:120px;
+          width: auto;
+          height: auto;
+          position: absolute;
+          top:20%;
+
+          &_amazing,
+          &_itstime{
+            max-width: 100px;
+          }
+          &_amazing{
+            right: 15%;
+
+          }
+          &_yes{
+            left: 15%;
+          }
+        }
+      }
+      .amazing{
+        path{
+          fill:var(--clr-green)
+        }
+        path.amazing{
+          fill:var(--clr-pink)
+        }
+      }
+    }
+    &_content{
+      padding:2rem 1.5rem 2rem;
+    }
+  }
+}
+
+//howitworks solution all ages
+.ages {
+  @extend  %section-padding;
+  .title p{
+    max-width: 730px;
+    margin:auto;
+  }
+  &-wrap {
+    display: grid;
+    place-items: center;
+    column-gap:1.25rem;
+    grid-auto-flow: row;
+    @include breakpoint-up('lg-tab'){
+      text-align: center;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr;
+      
+    }
+    @include breakpoint-down('lg-tab'){
+      figure{
+        order:1;
+        img{height: auto}
+      }
+      ul{
+        order: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+    figure{
+      overflow: hidden;
+      img{
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+    ul{
+      width: 100%;
+      li{
+        padding:2rem;
+        background-color: var(--clr-cream-light);
+        border-radius: 1.25rem;
+        @include  transition(all .4s linear);
+        cursor: pointer;
+        h3{
+          line-height: 1.2;
+        }
+        &:hover,&.active{
+          background-color: var(--clr-blue);
+          box-shadow: 0px 14px 16px -7px rgba(0, 0, 0, 0.11);
+        }
+        &:not(:last-child){
+          margin-bottom:1.25rem ;
+        }
+      }
+    }
+  }
+}

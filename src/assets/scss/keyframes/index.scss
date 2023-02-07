@@ -1,0 +1,88 @@
+@keyframes writing-effect {
+  to {
+    stroke-dashoffset: 0;
+    fill: var(--clr-body);
+    stroke: none;
+  }
+}
+
+@include keyframes(rotated) {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(scale-up) {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@include keyframes(scrollup) {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0.2;
+  }
+}
+@include keyframes(scrolldown) {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200px);
+    opacity: 0.2;
+  }
+}
+
+@include keyframes(moving) {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate(23vh, -1px) rotate(36deg) scale(0.9);
+  }
+  40% {
+    transform: translate(30vh, 15vh) rotate(72deg) scale(1);
+  }
+  60% {
+    transform: translate(15vh, 26vh) rotate(108deg) scale(1.2);
+  }
+  80% {
+    transform: translate(0, 23vh) rotate(144deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@include keyframes(rotateHalf) {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

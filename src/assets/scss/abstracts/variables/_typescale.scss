@@ -1,0 +1,69 @@
+//@font face
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+html {
+  font-size: 16px;
+}
+
+//Toothpillow font family and size setting
+:root {
+  --base-fs: 16;
+
+  //font family
+
+  --ff-body: 'Poppins', sans-serif;
+  --ff-heading: 'Poppins', sans-serif;
+  //font size
+  --fs-sm: clamp(0.56rem, calc(0.67rem + -0.13vw), 0.64rem);
+  --fs-md: clamp(0.75rem, calc(0.82rem + -0.08vw), 0.80rem);
+  --fs-body: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+  --fs-h5: clamp(1.25rem, calc(1.22rem + 0.14vw), 1.33rem);
+  --fs-h4: clamp(1.56rem, calc(1.49rem + 0.36vw), 1.78rem);
+  --fs-h3: clamp(1.95rem, calc(1.81rem + 0.69vw), 2.37rem);
+  --fs-h2: clamp(2.44rem, calc(2.20rem + 1.19vw), 3.16rem);
+  --fs-h1: clamp(3.05rem, calc(2.67rem + 1.93vw), 4.21rem);
+}
+body {
+  font-family: var(--ff-body);
+  position: relative;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  color:var(--clr-body)
+}
+
+.fs-sm {
+  font-size: var(--fs-sm);
+  line-height: 1.2;
+}
+.fs-md {
+  font-size: var(--fs-md);
+}
+h5,
+.fs-h5 {
+  font-size: var(--fs-h5);
+  line-height: 1.15;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+h4,
+.fs-h4 {
+  font-size: var(--fs-h4);
+  line-height: 1.5;
+  font-weight: 500;
+}
+h3,
+.fs-h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.3125;
+  font-weight: 600;
+}
+.fs-h2,h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.3125;
+  font-weight: 600;
+}
+h1,
+.fs-h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+}
