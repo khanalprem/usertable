@@ -496,3 +496,26 @@ $weights: 200, 300, 400, 500, 600, 700, 800, 900, bold, normal;
     }
   }
 }
+
+.line-shape {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    @include transition(width 0.4s ease-in-out);
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    right: 0;
+    height: 4px;
+    background-color: lighten($secondary,20%);
+    border-radius: 50%;
+    margin:auto;
+  }
+  &_left{
+    &::after{
+      margin:unset;
+    }
+  }
+}
+

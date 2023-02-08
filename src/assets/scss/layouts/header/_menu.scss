@@ -11,8 +11,9 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
-    height: 5px;
-    background-color: var(--clr-primary);
+    height: 4px;
+    background-color: lighten($secondary,30%);
+    border-radius: 50%;
   }
 }
 %menu-after_active {
@@ -34,18 +35,15 @@ nav {
         transition: color 0.5s;
         @extend %menu-after;
         @include breakpoint-up("lg-tab") {
-          padding: 1.5rem 0;
+          padding: 1rem 0;
         }
       }
-      &.is-active {
+      &.is-active,&:hover {
         a {
-          color: var(--clr-primary);
+          color: var(--clr-secondary);
           &::after {
-            width: 100%;
-            right: 0;
-            opacity: 1;
-            visibility: visible;
-            display: block;
+            @extend %menu-after_active
+
           }
         }
       }
