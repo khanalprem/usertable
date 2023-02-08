@@ -2,12 +2,12 @@ import React from 'react'
 
 const ServiceCard = ({title,icon,description}) => {
   return (
-    <div className="sevice-item">
-      <div className="service-item_icon">
+    <div className="services-item clr-white_bg radius-8 pd-24">
+      <div className="services-item_icon">
         <img src={icon} alt=''/>
       </div>
-      <div className="service-item_content">
-          <h3>{title}</h3>
+      <div className="services-item_content">
+          <h4 className="mb-24">{title}</h4>
           <p>{description}</p>
       </div>
     </div>

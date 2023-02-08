@@ -18,13 +18,16 @@
     }
   }
   &-secondary{
-    border:1px solid var(--clr-white);
+    border:1px solid var(--clr-primary);
     border-radius: 100px;
+    &:hover{
+      color: var(--clr-primary);
+    }
   }
   &-sm {
     padding: 0.7rem 1rem;
     border-radius: 1.25rem;
-    font-size: var(--fs-sm);
+    font-size: var(--fs-md);
   }
   
   &-white {
