@@ -1,41 +1,3 @@
-//four slide
-.fourSlide {
-
-  @include breakpoint-up('md-tab'){
-    margin-right: -356px;
-  }
-  .card {
-    figure {
-      overflow: hidden;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
-//section spacing
-
-%section-padding{
-  padding: 5rem 0;
-  @include breakpoint-up('lg-tab'){
-    padding: 8rem 0;
-  }
-}
-%shape{
-  &::before{
-    content: '';
-    width: 100%;
-    height: 50px;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-image: url('../../images/curve.png');
-  }
-  
-}
 
 .title{
   h5{
@@ -112,8 +74,11 @@
   @extend %section-padding;
   &-wrap{
     display: grid;
-    --minwidth:450px;
+    --minwidth:280px;
     grid-template-columns: repeat(auto-fit,minmax(var(--minwidth), 1fr));
+    @include breakpoint-up('md-tab'){
+      --minwidth:450px;
+    }
     @include breakpoint-up('sm-desktop'){
       --minwidth:550px;
     }

@@ -1,12 +1,13 @@
-
+@import 'menu';
 .site-header{
   z-index: 99;
   position: relative;
-  margin:2rem 0;
   width: 100%;
   position: absolute;
+  top:2rem;
   left:0;
   right:0;
+  transition: all .5 ease-in-out;
   
   &_wrap{
     border-radius: 0.4rem;
@@ -14,8 +15,42 @@
     padding:1rem 2rem;
     box-shadow: 0 0.25rem 0.75rem rgba(30,34, 40, 0.2);
   }
-  
+  &.is-sticky{
+    position: fixed;
+    top:0;
+    box-shadow: 0 0.25rem 0.75rem rgba(30,34, 40, 0.2);
+    background-color: var(--clr-white);
+    .site-header_wrap{
+      box-shadow: none
+    }
+  }
+  &.menu-active{
+    nav{
+      opacity: 1;
+      visibility: visible;
+      @include transform(translateX(0));
+      left:0;
+      right: 0;
+      width: 100%;
+      background-color: var(--clr-white);
+      @include scrollbar(var(--clr-bg), var(--clr-body),var(--clr-border));
+      z-index: 99999;
+      ul{
+        padding:1rem;
+      }
+    }
+  }
+  .menu-toggle{
+    @include breakpoint-up('lg-tab'){
+      display: none;
+    }
+    &_open{
+      position: fixed;
+      top:2rem;
+      right:2rem;
+    }
+  }
 }
 
-@import 'menu';
+
 

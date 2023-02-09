@@ -26,10 +26,31 @@
   }
 }
 nav {
-  position: relative;
+  position: fixed;
+  right:-100%;
+  opacity: 0;
+  bottom:0;
+  height:100vh;
+  visibility: visible;
+  
+  @include transform(translateX(-100%));
+  @include transition(all .5s ease-in-out);
+  @include breakpoint-up('lg-tab'){
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    position: relative;
+    height: auto;
+    right: unset;
+    bottom: unset;
+    left:unset
+  }
   ul {
     column-gap: 2rem;
-
+    flex-flow: column wrap;
+    @include breakpoint-up('lg-tab'){
+      flex-flow: row nowrap;
+    }
     li {
       a {
         transition: color 0.5s;

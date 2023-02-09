@@ -1,6 +1,7 @@
 //Toothpillow color setting
 $balck-900: #000000;
 $black-700: #323232;
+$black-300:#7f7f7f;
 $primary:#1E6C60;
 $primary-light:#34A853;
 $secondary:#F55446;
@@ -12,10 +13,12 @@ $pink: #eaadca;
 $yellow: #FDBE67;
 $white: #fff;
 $bg:#F6F7F9;
+$border:#f0f0f0;
 $brown: #BF4A5C;
 
 :root {
   --clr-body: #{$black-700};
+  --clr-body-300:#{$black-300};
   --clr-primary: #{$primary};
   --clr-primary-light:#{$primary-light};
   --clr-secondary:#{$secondary};
@@ -27,6 +30,7 @@ $brown: #BF4A5C;
   --clr-white: #{$white};
   --clr-brown: #{$brown};
   --clr-bg:#{$bg};
+  --clr-border:#{$border};
   --transition-speed: 0.3s
 }
 

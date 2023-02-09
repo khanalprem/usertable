@@ -2,6 +2,7 @@ import HighlightImage from "../assets/images/highlight.jpg";
 import Fluid from "../assets/images/fluid-logo.svg";
 import Olumo from "../assets/images/olumo-logo.svg";
 import Kirus from "../assets/images/kirus-logo.png";
+import { FiFacebook,FiTwitter,FiLinkedin,FiInstagram } from "react-icons/fi";
 const  Data =  [
   {
     id:1,
@@ -29,6 +30,11 @@ const  Data =  [
       },
       {
         id:5,
+        name:'teams',
+        to:'/teams'
+      },
+      {
+        id:6,
         name:'contact',
         to:'/contact'
       }
@@ -102,7 +108,7 @@ const  Data =  [
     ]
   },
   {
-    id:1,
+    id:4,
     name:'trusted',
     trustedItems:[
       {
@@ -135,6 +141,55 @@ const  Data =  [
         name:"Kirus",
         image:Kirus,
       },
+    ]
+  },
+  {
+    id:5,
+    name:'footer',
+    companyMenus:[
+      {
+        id:1,
+        name:"About",
+        to:"/about"
+      },
+      {
+        id:2,
+        name:"Teams",
+        to:"/teams"
+      },
+      {
+        id:3,
+        name:"Portfolio",
+        to:"portfolio"
+      },
+      
+    ]
+  },
+  {
+    id:6,
+    name:'socialIcons',
+    socialIcons:[
+      {
+        id:1,
+        icon:<FiFacebook/>,
+        url:'https://www.facebook.com/DanpheInfoTech',
+      },
+      {
+        id:2,
+        icon:<FiTwitter/>,
+        url:'https://www.facebook.com/DanpheInfoTech',
+      },
+      {
+        id:3,
+        icon:<FiLinkedin/>,
+        url:'https://www.linkedin.com/company/danphe-software-labs/',
+      },
+      {
+        id:4,
+        icon:<FiInstagram/>,
+        url:'https://www.linkedin.com/company/danphe-software-labs/',
+      },
+    
     ]
   },
 ]
