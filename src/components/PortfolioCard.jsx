@@ -1,14 +1,14 @@
 import React from 'react'
 
-const PortfolioCard = ({image,title,description,client,startDate,endDate}) => {
+const PortfolioCard = ({onClick,image,title,description,client,startDate,endDate}) => {
   return (
-    <div className="highlight-item clr-white_bg radius-8 pd-24">
+    <div className="highlight-item clr-white_bg radius-8 pd-24" onClick={onClick}>
       <figure className="highlight-item_figure">
         <img src={image} alt=''/>
       </figure>
       <div className="highlight-item_content">
-          <h4 className="mb-16">{title}</h4>
-          <p>{description}</p>
+          <h4 className="mb-16 trim-1">{title}</h4>
+          <p className="trim-2">{description}</p>
           <div className='highlight-item_client mt-16'>
             <div className='client'>
               <span className="fs-md is-uppercase fw-600">Client</span>

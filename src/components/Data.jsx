@@ -1,4 +1,5 @@
 import HighlightImage from "../assets/images/highlight.jpg";
+import James from "../assets/images/avatar-female.jpg";
 import Fluid from "../assets/images/fluid-logo.svg";
 import Olumo from "../assets/images/olumo-logo.svg";
 import Kirus from "../assets/images/kirus-logo.png";
@@ -190,6 +191,372 @@ const  Data =  [
         url:'https://www.linkedin.com/company/danphe-software-labs/',
       },
     
+    ]
+  },
+  {
+    id:7,
+    name:'teams',
+    teamsMember:[
+      {
+        id:1,
+        image:James,
+        name:"Prem Prasad Khanal",
+        post:'Sr.Frontend Developer',
+        description:"I am a passionate Frontend Developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:2,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:3,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:4,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:5,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:6,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Railss developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:7,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:8,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:9,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:10,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:11,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
+      {
+        id:12,
+        image:James,
+        name:"James watt",
+        post:'Senior Rails Developer',
+        description:"I am a passionate Rails developer who also relishes exploring new technology.",
+        socialIcons:[
+          {
+            id:1,
+            icon:<FiFacebook/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:2,
+            icon:<FiTwitter/>,
+            url:'https://www.facebook.com/DanpheInfoTech',
+          },
+          {
+            id:3,
+            icon:<FiLinkedin/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+          {
+            id:4,
+            icon:<FiInstagram/>,
+            url:'https://www.linkedin.com/company/danphe-software-labs/',
+          },
+        
+        ]
+      },
     ]
   },
 ]

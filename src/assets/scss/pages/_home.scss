@@ -44,6 +44,10 @@
       }
     }
   }
+  .hero-content_page{
+    max-width: 800px;
+    margin:unset;
+  }
 }
 .about{
   @extend %section-padding;
@@ -55,7 +59,6 @@
   }
 }
 .services{
-  background-color: var(--clr-bg);
   @extend %section-padding;
   &-wrap{
     display: grid;
@@ -67,6 +70,11 @@
     @include transition (all .5s linear);
     &:hover{
       box-shadow: 0 10px 30px rgba(30,34, 40, 0.2);
+    }
+  }
+  &-page{
+    .services-item{
+      border:1px solid var(--clr-border);
     }
   }
 }
@@ -85,6 +93,7 @@
   }
   &-item{
     box-shadow: 0 10px 30px rgba(30,34, 40, 0.2);
+    cursor: pointer;
     &_figure{
       margin-bottom: 1.5rem;
       overflow: hidden;
