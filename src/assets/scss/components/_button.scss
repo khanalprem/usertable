@@ -6,6 +6,7 @@
   cursor: pointer;
   border-radius: 1.25rem;
   display: inline-flex;
+  background-color: transparent;
   @include transition(background-color .4s ease-in-out);
   &-primary {
     color: var(--clr-white);
@@ -20,6 +21,7 @@
   &-secondary{
     border:1px solid var(--clr-primary);
     border-radius: 100px;
+    background-color: var(--clr-white);
     &:hover{
       color: var(--clr-primary);
     }

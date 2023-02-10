@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FiMessageSquare, FiArrowRight } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,22 +8,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Data from "../Data";
 import PortfolioCard from "../PortfolioCard";
 import ServiceCard from "../ServiceCard";
+import Modal from "../constant/Modal";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const [openModal, setOpenModal] = useState(false);
+  const [portfolioItem, setPortfolioItem] = useState({});
+  const toggleModal = () => {
+    setOpenModal(!openModal);
+  };
   useEffect(() => {
     gsap.fromTo(
       ".hero-content > *",
       {
         y: -200,
         opacity: 0,
-        stagger:0.5,
+        stagger: 0.5,
         scrollTrigger: {
           triggger: ".hero-content ",
           start: "top bottom",
-          scrub:true,
+          scrub: true,
           end: "top top",
-          
         },
       },
       {
@@ -31,7 +36,6 @@ const Home = () => {
         opacity: 1,
       }
     );
-    
 
     // const serviceCards = gsap.utils.toArray('.services-item');
     // serviceCards.forEach((card) => {
@@ -47,8 +51,6 @@ const Home = () => {
     //     }
     //   })
     // })
-
-    
   }, []);
 
   const ServiceData = Data.filter((item) => item.name === "services")[0]
@@ -63,7 +65,7 @@ const Home = () => {
         <div className="container">
           <div className="hero-content clr-white">
             <h5 className="fw-600 ">HELLO! THIS IS danhpe</h5>
-            <h1 className="mt-32 mb-32">
+            <h1 className="mt-24 mb-40">
               We bring rapid solutions for your{" "}
               <span className="line-shape">business</span>.
             </h1>
@@ -111,7 +113,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="services">
+      <section className="services clr-bg">
         <div className="container">
           <div className="title  mb-40">
             <div className="title-content ">
@@ -159,6 +161,10 @@ const Home = () => {
             {HighlightData.slice(0, 4).map((item, index) => {
               return (
                 <PortfolioCard
+                  onClick={() => {
+                    toggleModal();
+                    setPortfolioItem(item);
+                  }}
                   key={index}
                   id={item.id}
                   image={item.image}
@@ -173,7 +179,7 @@ const Home = () => {
           </div>
           <div className="is-flex is-center mt-40">
             <Link
-              to="/services"
+              to="/portfolio"
               className="btn btn-secondary   is-flex is-align-center col-gap-8 fw-500 is-uppercase"
             >
               <span>view all</span>
@@ -204,6 +210,30 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
+      <Modal
+        title={portfolioItem.title}
+        openModal={openModal}
+        toggleModal={toggleModal}
+        modalSize="modal-cntr_lg"
+      >
+        <div className="highlight-item_content">
+          <p>{portfolioItem.description}</p>
+          <div className='highlight-item_client mt-16'>
+            <div className='client'>
+              <span className="fs-md is-uppercase fw-600">Client</span>
+              <p className="is-capitalize fw-600 clr-primary">{portfolioItem.client}</p>
+            </div>
+            <div className='duration'>
+              <span className="fs-md is-uppercase fw-600">Time Duration</span>
+              <div className='is-flex is-align-center is-start col-gap-12 fs-md'>
+                <time>{portfolioItem.startDate} </time>
+                <span>-</span>
+                <time>{portfolioItem.endDate}</time>
+              </div>
+            </div>
+          </div>
+      </div>
+      </Modal>
     </>
   );
 };
