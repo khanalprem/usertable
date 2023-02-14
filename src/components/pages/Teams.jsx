@@ -1,11 +1,12 @@
 import React, { Children, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../context/store";
 import Modal from "../constant/Modal";
-import Data from "../ProductData";
 
 const Teams = () => {
-  const teamsData = Data.filter((member) => member.name === "teams")[0]
-    .teamsMember;
+  const { data } = useAppContext()
+  const teamsData = data?.filter((member) => member?.name === "teams")[0]
+    ?.teamsMember || [];
   const [openModal, setOpenModal] = useState(false);
   const [modalItem, setModalItem] = useState({});
   const toggleModal = () => {

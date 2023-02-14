@@ -5,14 +5,13 @@ import "swiper/css";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProductData from "../ProductData";
 import PortfolioItemMap from "../PortfolioItemMap";
 import ServiceCardMap from "../ServiceCardMap";
+import { useAppContext } from "../../context/store";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-
-  console.log(ProductData)
+  const { data } = useAppContext
 
   // useLayoutEffect(() => {
   //   gsap.fromTo(
@@ -41,7 +40,7 @@ const Home = () => {
   //     }
 
   //   );
-  
+
   //   const serviceCards = gsap.utils.toArray('.services-item');
   //   serviceCards.forEach((card) => {
   //     gsap.from(card,{
@@ -56,12 +55,12 @@ const Home = () => {
   //   })
   // },[]);
 
-  const ServiceData = ProductData.filter((item) => item.name === "services")[0]
-    .serviceItems;
-  const HighlightData = ProductData.filter((item) => item.name === "highlight")[0]
-    .highlightItems;
-  const TrustedData = ProductData.filter((item) => item.name === "trusted")[0]
-    .trustedItems;
+  const ServiceData = data?.filter((item) => item?.name === "services")[0]
+    ?.serviceItems || [];
+  const HighlightData = data?.filter((item) => item?.name === "highlight")[0]
+    ?.highlightItems || [];
+  const TrustedData = data?.filter((item) => item?.name === "trusted")[0]
+    ?.trustedItems || [];
   return (
     <>
       <div className="hero is-flex is-center is-align-center dir-column text-center">
@@ -131,7 +130,7 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <ServiceCardMap/>
+          <ServiceCardMap />
         </div>
       </section>
       <section className="highlight">
@@ -148,9 +147,9 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          
-            <PortfolioItemMap visible={4} showmore={false}/>
-          
+
+          <PortfolioItemMap visible={4} showmore={false} />
+
           <div className="is-flex is-center mt-40">
             <Link
               to="/portfolio"
@@ -203,7 +202,7 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
-  
+
     </>
   );
 };

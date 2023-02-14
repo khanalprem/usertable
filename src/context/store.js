@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import axios from 'axios'
 
 import ProductData from '../components/ProductData';
 
@@ -9,14 +8,10 @@ const AppProvider = ({children}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // (async () => {
-    //   const response = await axios.get(URL);
-    //   setData(response.data);
-    // })();
     setData(ProductData)
   },[]);
 
-  return <AppContext.Provider value ={{data: ProductData}}>{children}</AppContext.Provider>
+  return <AppContext.Provider value ={{data}}>{children}</AppContext.Provider>
   
 };
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import PortfolioCard from './PortfolioCard';
 import { FiArrowRight } from "react-icons/fi";
 import Modal from './constant/Modal';
@@ -6,15 +6,14 @@ import { useAppContext } from '../context/store';
 
 
 
-const PortfolioItemMap = ({visible,showmoreButton,showmore}) => {
+const PortfolioItemMap = ({ visible, showmoreButton, showmore }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalItem, setModalItem] = useState({});
 
-const {data} = useAppContext()
-  console.log(data)
+  const { data } = useAppContext()
 
-  const HighlightData = data.filter((item) => item.name === "highlight")[0]
-    .highlightItems;
+  const HighlightData = data?.filter((item) => item?.name === "highlight")[0]
+    ?.highlightItems || [];
   const highlightLength = HighlightData.length;
 
   const toggleModal = () => {
@@ -24,40 +23,40 @@ const {data} = useAppContext()
 
   return (
     <>
-    <div className="highlight-wrap gap-24 pt-24">
-    {HighlightData.slice(0, visible).map((item, index) => {
-      return (
-        <PortfolioCard
-          onClick={() => {
-            setModalItem(item);
-            toggleModal();
-          }}
-          
-          key={index}
-          id={item.id}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          client={item.client}
-          startDate={item.startDate}
-          endDate={item.endDate}
-        />
-      );
-    })}
-    </div>
-    {showmore && <div className="is-flex is-center mt-40">
-      
-      {highlightLength >= visible ? (
-        <button
-          onClick={() => showmoreButton()}
-          className="btn btn-secondary   is-flex is-align-center col-gap-8 fw-500 is-uppercase"
-        >
-          <span>view more</span>
-          <FiArrowRight />
-        </button>
-      ) : null}
-    </div>}
-    <Modal
+      <div className="highlight-wrap gap-24 pt-24">
+        {HighlightData.slice(0, visible).map((item, index) => {
+          return (
+            <PortfolioCard
+              onClick={() => {
+                setModalItem(item);
+                toggleModal();
+              }}
+
+              key={index}
+              id={item.id}
+              image={item.image}
+              title={item.title}
+              description={item.description}
+              client={item.client}
+              startDate={item.startDate}
+              endDate={item.endDate}
+            />
+          );
+        })}
+      </div>
+      {showmore && <div className="is-flex is-center mt-40">
+
+        {highlightLength >= visible ? (
+          <button
+            onClick={() => showmoreButton()}
+            className="btn btn-secondary   is-flex is-align-center col-gap-8 fw-500 is-uppercase"
+          >
+            <span>view more</span>
+            <FiArrowRight />
+          </button>
+        ) : null}
+      </div>}
+      <Modal
         toggleModal={toggleModal}
         openModal={openModal}
         modalSize="modal-cntr_lg"
@@ -79,7 +78,7 @@ const {data} = useAppContext()
               </div>
             </div>
           </div>
-      </div>
+        </div>
       </Modal>
     </>
   )
