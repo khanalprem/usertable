@@ -4,7 +4,7 @@ import Fluid from "../assets/images/fluid-logo.svg";
 import Olumo from "../assets/images/olumo-logo.svg";
 import Kirus from "../assets/images/kirus-logo.png";
 import { FiFacebook,FiTwitter,FiLinkedin,FiInstagram } from "react-icons/fi";
-const  Data =  [
+const  ProductData =  [
   {
     id:1,
     name:'menu',
@@ -560,4 +560,4 @@ const  Data =  [
     ]
   },
 ]
-export default Data;
+export default ProductData;

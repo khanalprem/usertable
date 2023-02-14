@@ -1,7 +1,7 @@
 import React, { Children, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../constant/Modal";
-import Data from "../Data";
+import Data from "../ProductData";
 
 const Teams = () => {
   const teamsData = Data.filter((member) => member.name === "teams")[0]

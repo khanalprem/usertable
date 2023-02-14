@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FiMessageSquare,FiMenu ,FiX} from "react-icons/fi";
 import Logo from '../../assets/images/danphe-logo.png';
-import Data from '../Data'
+import Data from '../ProductData'
 
 const Header = () => {
   const [sticky , setSticky] = useState(false);

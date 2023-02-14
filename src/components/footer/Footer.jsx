@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {FiArrowUp} from 'react-icons/fi'
 import Logo from "../../assets/images/danphe-logo.png";
-import Data from "../Data";
+import ProductData from "../ProductData";
 const Footer = () => {
   const [showButton, setShowButton]= useState();
   const newDate = new Date().getFullYear();
-  const serviceLink = Data.filter((item) => item.name === "services")[0]
+  const serviceLink = ProductData.filter((item) => item.name === "services")[0]
     .serviceItems;
-    const comapnyLink = Data.filter((item) => item.name === "footer")[0]
+    const comapnyLink = ProductData.filter((item) => item.name === "footer")[0]
     .companyMenus;
-    const socialLink = Data.filter((item) => item.name === "socialIcons")[0]
+    const socialLink = ProductData.filter((item) => item.name === "socialIcons")[0]
     .socialIcons;
   const handleScrollTop = () => {
     window.scrollTo({top:0,behavior:'smooth'});

@@ -1,73 +1,76 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { FiMessageSquare, FiArrowRight } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Data from "../Data";
-import PortfolioCard from "../PortfolioCard";
-import ServiceCard from "../ServiceCard";
-import Modal from "../constant/Modal";
+import ProductData from "../ProductData";
+import PortfolioItemMap from "../PortfolioItemMap";
+import ServiceCardMap from "../ServiceCardMap";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const [openModal, setOpenModal] = useState(false);
-  const [portfolioItem, setPortfolioItem] = useState({});
-  const toggleModal = () => {
-    setOpenModal(!openModal);
-  };
-  useEffect(() => {
-    gsap.fromTo(
-      ".hero-content > *",
-      {
-        y: -200,
-        opacity: 0,
-        stagger: 0.5,
-        scrollTrigger: {
-          triggger: ".hero-content ",
-          start: "top bottom",
-          scrub: true,
-          end: "top top",
-        },
-      },
-      {
-        y: 0,
-        opacity: 1,
-      }
-    );
 
-    // const serviceCards = gsap.utils.toArray('.services-item');
-    // serviceCards.forEach((card) => {
-    //   gsap.from(card,{
-    //     opacity:0,
-    //     x:300,
-    //     stagger:0.2,
-    //     scrollTrigger:{
-    //       trigger:'.services',
-    //       scrub:true,
-    //       start: "top 80%",
-    //       end: "bottom 10%",
-    //     }
-    //   })
-    // })
-  }, []);
+  console.log(ProductData)
 
-  const ServiceData = Data.filter((item) => item.name === "services")[0]
+  // useLayoutEffect(() => {
+  //   gsap.fromTo(
+  //     ".hero-content > *",
+  //     {
+  //       y: -150,
+  //       opacity:0,
+  //       scrollTrigger: {
+  //         triggger: ".hero-content ",
+  //         start: "start center",
+  //         scrub: true,
+  //       },
+  //       stagger: {
+  //         // wrap advanced options in an object
+
+  //         each: 0.4,
+  //         from: "center",
+  //         grid: "auto",
+  //         ease: "power2.inOut",
+  //         repeat: -1, // Repeats immediately, not waiting for the other staggered animations to finish
+  //       },
+  //     },
+  //     {
+  //       y:0,
+  //       opacity:1
+  //     }
+
+  //   );
+  
+  //   const serviceCards = gsap.utils.toArray('.services-item');
+  //   serviceCards.forEach((card) => {
+  //     gsap.from(card,{
+  //       opacity:0,
+  //       x:500,
+  //       stagger:0.2,
+  //       scrollTrigger:{
+  //         trigger:'.services',
+  //         scrub:true,
+  //       }
+  //     })
+  //   })
+  // },[]);
+
+  const ServiceData = ProductData.filter((item) => item.name === "services")[0]
     .serviceItems;
-  const HighlightData = Data.filter((item) => item.name === "highlight")[0]
+  const HighlightData = ProductData.filter((item) => item.name === "highlight")[0]
     .highlightItems;
-  const TrustedData = Data.filter((item) => item.name === "trusted")[0]
+  const TrustedData = ProductData.filter((item) => item.name === "trusted")[0]
     .trustedItems;
   return (
     <>
       <div className="hero is-flex is-center is-align-center dir-column text-center">
         <div className="container">
-          <div className="hero-content clr-white">
-            <h5 className="fw-600 ">HELLO! THIS IS danhpe</h5>
-            <h1 className="mt-24 mb-40">
-              We bring rapid solutions for your{" "}
-              <span className="line-shape">business</span>.
+          <div className="hero-content clr-white" >
+            <h5 className="fw-600 " >HELLO! THIS IS danhpe</h5>
+            <h1 className="mt-24 mb-40" >
+              We bring rapid <span className="italic">solutions</span> for your{" "}
+              <span className="line-shape italic">business</span>.
             </h1>
             <div className="buttons">
               <Link
@@ -128,19 +131,7 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <div className="services-wrap gap-24 pt-24">
-            {ServiceData.map((item, index) => {
-              return (
-                <ServiceCard
-                  key={index}
-                  id={item.id}
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                />
-              );
-            })}
-          </div>
+          <ServiceCardMap/>
         </div>
       </section>
       <section className="highlight">
@@ -157,26 +148,9 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <div className="highlight-wrap gap-24 pt-24">
-            {HighlightData.slice(0, 4).map((item, index) => {
-              return (
-                <PortfolioCard
-                  onClick={() => {
-                    toggleModal();
-                    setPortfolioItem(item);
-                  }}
-                  key={index}
-                  id={item.id}
-                  image={item.image}
-                  title={item.title}
-                  description={item.description}
-                  client={item.client}
-                  startDate={item.startDate}
-                  endDate={item.endDate}
-                />
-              );
-            })}
-          </div>
+          
+            <PortfolioItemMap visible={4} showmore={false}/>
+          
           <div className="is-flex is-center mt-40">
             <Link
               to="/portfolio"
@@ -197,7 +171,26 @@ const Home = () => {
               </h5>
             </div>
           </div>
-          <Swiper spaceBetween={50} slidesPerView={5}>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={2}
+            breakpoints={{
+              // when window width is >= 640px
+              480: {
+                width: 480,
+                slidesPerView: 3,
+              },
+              // when window width is >= 768px
+              768: {
+                width: 768,
+                slidesPerView: 4,
+              },
+              1024: {
+                width: 1024,
+                slidesPerView: 5,
+              },
+            }}
+          >
             {TrustedData.map((item, index) => {
               return (
                 <SwiperSlide key={index} id={item.id}>
@@ -210,30 +203,7 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
-      <Modal
-        title={portfolioItem.title}
-        openModal={openModal}
-        toggleModal={toggleModal}
-        modalSize="modal-cntr_lg"
-      >
-        <div className="highlight-item_content">
-          <p>{portfolioItem.description}</p>
-          <div className='highlight-item_client mt-16'>
-            <div className='client'>
-              <span className="fs-md is-uppercase fw-600">Client</span>
-              <p className="is-capitalize fw-600 clr-primary">{portfolioItem.client}</p>
-            </div>
-            <div className='duration'>
-              <span className="fs-md is-uppercase fw-600">Time Duration</span>
-              <div className='is-flex is-align-center is-start col-gap-12 fs-md'>
-                <time>{portfolioItem.startDate} </time>
-                <span>-</span>
-                <time>{portfolioItem.endDate}</time>
-              </div>
-            </div>
-          </div>
-      </div>
-      </Modal>
+  
     </>
   );
 };
