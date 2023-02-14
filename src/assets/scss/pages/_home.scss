@@ -19,6 +19,7 @@
   // @include background-gradient(var(--clr-primary-light), var(--clr-secondary), 'vertical');
   background: linear-gradient(160deg, lighten($primary, 30%) 19%, lighten($primary, 10%) 70%);
   min-height:calc(100vh - 50px);
+  padding-top:160px;
   @extend %section-padding;
   position: relative;
   &::before{
