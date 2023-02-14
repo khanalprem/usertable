@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import { FiMessageSquare, FiArrowRight } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,7 +11,7 @@ import { useAppContext } from "../../context/store";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const { data } = useAppContext
+  const { data } = useAppContext()
 
   // useLayoutEffect(() => {
   //   gsap.fromTo(
@@ -55,10 +55,6 @@ const Home = () => {
   //   })
   // },[]);
 
-  const ServiceData = data?.filter((item) => item?.name === "services")[0]
-    ?.serviceItems || [];
-  const HighlightData = data?.filter((item) => item?.name === "highlight")[0]
-    ?.highlightItems || [];
   const TrustedData = data?.filter((item) => item?.name === "trusted")[0]
     ?.trustedItems || [];
   return (
