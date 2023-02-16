@@ -2,6 +2,7 @@
 $balck-900: #000000;
 $black-700: #323232;
 $black-300:#7f7f7f;
+$black-500:#666666;
 $primary:#1E6C60;
 $primary-light:#34A853;
 $secondary:#F55446;
@@ -18,6 +19,7 @@ $brown: #BF4A5C;
 
 :root {
   --clr-body: #{$black-700};
+  --clr-body-500:#{$black-500};
   --clr-body-300:#{$black-300};
   --clr-primary: #{$primary};
   --clr-primary-light:#{$primary-light};

@@ -1,10 +1,7 @@
 import React from 'react'
-import Data from '../Data';
-import ServiceCard from '../ServiceCard';
+import ServiceCardMap from '../ServiceCardMap';
 
 const Services = () => {
-  const ServiceData = Data.filter((item) => item.name === "services")[0]
-    .serviceItems;
   return (
     <>
     <div className="hero is-flex is-center  dir-column ">
@@ -29,19 +26,7 @@ const Services = () => {
               </h5>
             </div>
           </div>
-          <div className="services-wrap gap-24 pt-24">
-            {ServiceData.map((item, index) => {
-              return (
-                <ServiceCard
-                  key={index}
-                  id={item.id}
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                />
-              );
-            })}
-          </div>
+          <ServiceCardMap/>
         </div>
       </section>
     </>

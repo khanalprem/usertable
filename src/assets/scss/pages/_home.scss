@@ -19,6 +19,7 @@
   // @include background-gradient(var(--clr-primary-light), var(--clr-secondary), 'vertical');
   background: linear-gradient(160deg, lighten($primary, 30%) 19%, lighten($primary, 10%) 70%);
   min-height:calc(100vh - 50px);
+  padding-top:200px;
   @extend %section-padding;
   position: relative;
   &::before{
@@ -34,6 +35,9 @@
   &-content{
     max-width: 960px;
     margin:auto;
+    // h1,h5,.btn{
+    //   opacity: 0;
+    // }
     .btn{
       &-secondary{
         border-color:var(--clr-white);
