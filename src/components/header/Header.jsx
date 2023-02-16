@@ -5,10 +5,9 @@ import Logo from '../../assets/images/danphe-logo.png';
 import { useAppContext } from '../../context/store';
 
 const Header = () => {
-  const { data } = useAppContext()
+  const { data, active, setActive } = useAppContext()
   const [sticky, setSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState('home');
   const MenuData = data?.filter((item) => item?.name === "menu")[0]?.menuItems || [];
 
   const toggleClass = (name) => setActive(name);

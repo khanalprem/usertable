@@ -11,7 +11,7 @@ import { useAppContext } from "../../context/store";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const { data } = useAppContext()
+  const { data, setActive } = useAppContext()
 
   // useLayoutEffect(() => {
   //   gsap.fromTo(
@@ -150,6 +150,7 @@ const Home = () => {
             <Link
               to="/portfolio"
               className="btn btn-secondary   is-flex is-align-center col-gap-8 fw-500 is-uppercase"
+              onClick={() => setActive('portfolio')}
             >
               <span>view all</span>
               <FiArrowRight />
