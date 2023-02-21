@@ -3,7 +3,7 @@ import James from "../assets/images/avatar-female.jpg";
 import Fluid from "../assets/images/fluid-logo.svg";
 import Olumo from "../assets/images/olumo-logo.svg";
 import Kirus from "../assets/images/kirus-logo.png";
-import { FiFacebook,FiTwitter,FiLinkedin,FiInstagram } from "react-icons/fi";
+import { FiFacebook,FiTwitter,FiLinkedin,FiInstagram,FiPhoneCall, FiMail, FiMapPin } from "react-icons/fi";
 const  ProductData =  [
   {
     id:1,
@@ -557,6 +557,31 @@ const  ProductData =  [
         
         ]
       },
+    ]
+  },
+  {
+    id:8,
+    name:'contact',
+    contactItems:[
+      {
+        id:1,
+        icon:<FiPhoneCall/>,
+        name:'Phone Number',
+        address:'+9779851182852'
+      },
+      {
+        id:2,
+        icon:<FiMail/>,
+        name:'Email Address',
+        address:'info@danpheite.com'
+      },
+      {
+        id:3,
+        icon:<FiMapPin/>,
+        name:'Location',
+        address:'Tanka Prasad Ghumti Sadak, Anamnagar, Kathmandu'
+      },
+    
     ]
   },
 ]

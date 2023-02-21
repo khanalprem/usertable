@@ -1,0 +1,27 @@
+.contact{
+  @extend %section-padding;
+  &-wrap{
+    display: grid;
+    gap:2rem;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  &-list{
+    li{
+      border:1px solid var(--clr-border);
+      .is-square{
+        box-shadow: 0 1px 6px rgba($black-700,.2);
+      }
+      &:not(:last-child){
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  &-form{
+    &_wrap{
+      --minwidth:250px;
+      display: grid;
+      gap:1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(var(--minwidth), 1fr));
+    }
+  }
+}
