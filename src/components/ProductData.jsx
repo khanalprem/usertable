@@ -34,11 +34,6 @@ const  ProductData =  [
         name:'teams',
         to:'/teams'
       },
-      {
-        id:6,
-        name:'contact',
-        to:'/contact'
-      }
     ]
   },
   {
