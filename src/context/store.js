@@ -7,11 +7,13 @@ const AppContext = createContext();
 const AppProvider = ({children}) => {
   const [data, setData] = useState([]);
   const [active, setActive] = useState('home')
-  const [userData, setUserData] =useState([]);
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
     setData(ProductData)
   },[]);
+
+  console.log(userData)
 
   return <AppContext.Provider value ={{data, active, setActive, userData, setUserData}}>{children}</AppContext.Provider>
   

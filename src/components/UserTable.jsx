@@ -1,34 +1,35 @@
 import React, { useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { useAppContext } from "../context/store";
 import Modal from "./constant/Modal";
-import CreateUserForm from "./CreateUserForm";
 
-const UserTable = ({
-  userData
-}) => {
+const UserTable = () => {
+  const { userData } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
   const [modalItem, setModalItem] = useState({});
   const toggleModal = () => {
     setOpenModal(!openModal);
   };
-
-
+  // const handleEdit = (userData) => {
+  //   onEdit(userData);
+  //   setOpenModal(!openModal);
+  // };
   return (
     <>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Profile</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone </th>
-            <th>Address</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {userData &&
-            userData?.map((item, index) => {
+      <div className="container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Profile</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone </th>
+              <th>Address</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData.map((item, index) => {
               return (
                 <tr key={index}>
                   <td>
@@ -42,10 +43,11 @@ const UserTable = ({
                     <div className="is-flex is-end is-align-center col-gap-12">
                       <div
                         className="is-square is-square_sm is-square_icon is-square_circcle"
-                        onClick={() => {
-                          setModalItem(item);
-                          toggleModal();
-                        }}
+                        // onClick={() => {
+                        //   setModalItem(item);
+                        //   toggleModal();
+                        // }}
+                        onClick={toggleModal}
                       >
                         <FiEdit />
                       </div>
@@ -57,16 +59,12 @@ const UserTable = ({
                 </tr>
               );
             })}
-        </tbody>
-      </table>
-      {openModal ? 
-      <Modal
-        toggleModal={toggleModal}
-        openModal={openModal}
-        modalSize="modal-cntr_md"
-      >
-        <CreateUserForm initialUserDetail={modalItem} formData={modalItem} setFormData={setModalItem} />
-      </Modal> : null}
+          </tbody>
+        </table>
+      </div>
+      <Modal toggleModal={toggleModal} openModal={openModal}>
+
+      </Modal>
     </>
   );
 };
